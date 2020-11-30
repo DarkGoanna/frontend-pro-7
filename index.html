@@ -7,12 +7,26 @@
 </head>
 <body>
     <script>
-    /* 1 - реальзуем метод 'map' */
+    /* 1 - реализуем метод 'map' */
         function doMap (array, callback) {
             var result = [];
-            array.forEach( function (elem, ind, thisArr) {
-               result.push( callback(elem, ind, thisArr) );
-            } );
+
+            array.forEach(function (elem, ind, thisArr) {
+               result.push(callback(elem, ind, thisArr));
+            });
+            return result;
+        }
+
+    
+    /* 2 - реализуем метод 'filter' */
+        function doFilter (array, callback) {
+            var result = [];
+
+            array.forEach(function (elem, ind, thisArr) {
+                if (callback(elem, ind, thisArr)) {
+                    result.push(elem);
+                }
+            });
             return result;
         }
     </script>
