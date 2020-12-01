@@ -29,6 +29,33 @@
             });
             return result;
         }
+
+
+        /* 3 задание */
+        const notification = [
+            {
+            date: '31/07/2019',
+            msg: 'message here'
+            },
+            {
+            date: '31/07/2019',
+            msg: 'Some enother message here'
+            },
+            {
+            date: '11/08/2013',
+            msg: 'enother message'
+            }
+        ];
+        function grouping (array) {
+            var result = array.reduce(function(acc, obj){
+                if (!acc[obj.date]) {
+                    acc[obj.date] = [];
+                }
+                acc[obj.date].push(obj.msg);
+                return acc;
+            }, {});
+            return result;
+        }
     </script>
 </body>
 </html>
